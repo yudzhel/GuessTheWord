@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -45,7 +46,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.BackColor = System.Drawing.Color.Moccasin;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -65,6 +66,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.BurlyWood;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.buttonExit, 0, 2);
@@ -83,37 +85,58 @@
             // buttonExit
             // 
             this.buttonExit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonExit.BackColor = System.Drawing.Color.Moccasin;
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonExit.FlatAppearance.BorderSize = 4;
+            this.buttonExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonExit.Location = new System.Drawing.Point(215, 224);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(279, 54);
             this.buttonExit.TabIndex = 2;
             this.buttonExit.Text = "EXIT";
-            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // buttonLeaderboard
             // 
             this.buttonLeaderboard.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonLeaderboard.BackColor = System.Drawing.Color.Moccasin;
             this.buttonLeaderboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLeaderboard.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonLeaderboard.FlatAppearance.BorderSize = 4;
+            this.buttonLeaderboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.buttonLeaderboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLeaderboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLeaderboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonLeaderboard.Location = new System.Drawing.Point(215, 123);
             this.buttonLeaderboard.Name = "buttonLeaderboard";
             this.buttonLeaderboard.Size = new System.Drawing.Size(279, 54);
             this.buttonLeaderboard.TabIndex = 1;
             this.buttonLeaderboard.Text = "LEADERBOARD";
-            this.buttonLeaderboard.UseVisualStyleBackColor = true;
+            this.buttonLeaderboard.UseVisualStyleBackColor = false;
             this.buttonLeaderboard.Click += new System.EventHandler(this.buttonLeaderboard_Click);
             // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.Moccasin;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.FlatAppearance.BorderSize = 4;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button1.Location = new System.Drawing.Point(215, 23);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(279, 54);
             this.button1.TabIndex = 0;
-            this.button1.Text = "PLAY";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "NEW GAME";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
@@ -129,6 +152,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Moccasin;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Image = global::GuessTheWord.Properties.Resources.title;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
@@ -142,13 +166,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(715, 507);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Guess The Word";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

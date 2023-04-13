@@ -22,7 +22,8 @@ namespace GuessTheWord.Code
             wordsList.Add(new Word("Describe", new string[] { "Portray", "Characterize", "Picture" }));
             wordsList.Add(new Word("Mischievous", new string[] { "Prankish", "Waggish", "Impish" }));
             wordsList.Add(new Word("Strange", new string[] { "Odd", "Peculiar", "Unusual" }));
-
+            wordsList.Add(new Word("Correct", new string[] { "True", "Right", "Accurate" }));
+            wordsList.Add(new Word("Dedicated", new string[] { "Committed", "Devoted", "Loyal" }));
         }
 
         public Word GenerateWord()
