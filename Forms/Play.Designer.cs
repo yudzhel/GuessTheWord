@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.labelPlayerName = new System.Windows.Forms.Label();
-            this.buttonBack = new System.Windows.Forms.Button();
+            this.buttonGiveUp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,11 +45,12 @@
             this.pictureBoxShowHint = new System.Windows.Forms.PictureBox();
             this.pictureBoxNewWord = new System.Windows.Forms.PictureBox();
             this.labelSynonyms = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.textBoxAnswer = new System.Windows.Forms.TextBox();
             this.labelWordToGuess = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolTipHint = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipNewWord = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -71,18 +72,19 @@
             this.labelPlayerName.TabIndex = 0;
             this.labelPlayerName.Text = "label1";
             // 
-            // buttonBack
+            // buttonGiveUp
             // 
-            this.buttonBack.BackColor = System.Drawing.Color.Tan;
-            this.buttonBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBack.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonBack.Location = new System.Drawing.Point(587, 0);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(128, 30);
-            this.buttonBack.TabIndex = 1;
-            this.buttonBack.Text = "Back";
-            this.buttonBack.UseVisualStyleBackColor = false;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            this.buttonGiveUp.BackColor = System.Drawing.Color.Tan;
+            this.buttonGiveUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonGiveUp.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonGiveUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGiveUp.Location = new System.Drawing.Point(587, 0);
+            this.buttonGiveUp.Name = "buttonGiveUp";
+            this.buttonGiveUp.Size = new System.Drawing.Size(128, 30);
+            this.buttonGiveUp.TabIndex = 1;
+            this.buttonGiveUp.Text = "Give Up";
+            this.buttonGiveUp.UseVisualStyleBackColor = false;
+            this.buttonGiveUp.Click += new System.EventHandler(this.buttonGiveUp_Click);
             // 
             // panel1
             // 
@@ -118,13 +120,13 @@
             // 
             // labelTimer
             // 
-            this.labelTimer.AutoSize = true;
             this.labelTimer.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTimer.Location = new System.Drawing.Point(45, 16);
+            this.labelTimer.Location = new System.Drawing.Point(29, 16);
             this.labelTimer.Name = "labelTimer";
-            this.labelTimer.Size = new System.Drawing.Size(46, 24);
+            this.labelTimer.Size = new System.Drawing.Size(85, 24);
             this.labelTimer.TabIndex = 0;
             this.labelTimer.Text = "300";
+            this.labelTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
@@ -184,7 +186,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.buttonBack);
+            this.panel4.Controls.Add(this.buttonGiveUp);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 477);
             this.panel4.Name = "panel4";
@@ -197,7 +199,6 @@
             this.panel5.Controls.Add(this.pictureBoxShowHint);
             this.panel5.Controls.Add(this.pictureBoxNewWord);
             this.panel5.Controls.Add(this.labelSynonyms);
-            this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.buttonSubmit);
             this.panel5.Controls.Add(this.textBoxAnswer);
             this.panel5.Controls.Add(this.labelWordToGuess);
@@ -219,6 +220,7 @@
             this.pictureBoxShowHint.TabIndex = 11;
             this.pictureBoxShowHint.TabStop = false;
             this.pictureBoxShowHint.Click += new System.EventHandler(this.pictureBoxShowHint_Click);
+            this.pictureBoxShowHint.MouseHover += new System.EventHandler(this.pictureBoxShowHint_MouseHover);
             // 
             // pictureBoxNewWord
             // 
@@ -231,41 +233,31 @@
             this.pictureBoxNewWord.TabIndex = 10;
             this.pictureBoxNewWord.TabStop = false;
             this.pictureBoxNewWord.Click += new System.EventHandler(this.pictureBoxNewWord_Click);
+            this.pictureBoxNewWord.MouseHover += new System.EventHandler(this.pictureBoxNewWord_MouseHover);
             // 
             // labelSynonyms
             // 
-            this.labelSynonyms.AutoSize = true;
             this.labelSynonyms.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSynonyms.Location = new System.Drawing.Point(266, 226);
+            this.labelSynonyms.Location = new System.Drawing.Point(181, 226);
             this.labelSynonyms.Name = "labelSynonyms";
-            this.labelSynonyms.Size = new System.Drawing.Size(44, 16);
+            this.labelSynonyms.Size = new System.Drawing.Size(367, 16);
             this.labelSynonyms.TabIndex = 4;
             this.labelSynonyms.Text = "label5";
-            this.labelSynonyms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(179, 225);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 16);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "SYNONYMS:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelSynonyms.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonSubmit
             // 
             this.buttonSubmit.BackColor = System.Drawing.Color.White;
             this.buttonSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSubmit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonSubmit.FlatAppearance.BorderSize = 2;
+            this.buttonSubmit.FlatAppearance.BorderSize = 3;
+            this.buttonSubmit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSubmit.Location = new System.Drawing.Point(289, 275);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(140, 35);
-            this.buttonSubmit.TabIndex = 2;
+            this.buttonSubmit.TabIndex = 3;
             this.buttonSubmit.Text = "SUBMIT";
             this.buttonSubmit.UseVisualStyleBackColor = false;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
@@ -332,7 +324,7 @@
         #endregion
 
         private System.Windows.Forms.Label labelPlayerName;
-        private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.Button buttonGiveUp;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label labelScore;
@@ -346,11 +338,12 @@
         private System.Windows.Forms.Label labelWordToGuess;
         private System.Windows.Forms.Button buttonSubmit;
         private System.Windows.Forms.Label labelSynonyms;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label labelTimer;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBoxNewWord;
         private System.Windows.Forms.PictureBox pictureBoxShowHint;
+        private System.Windows.Forms.ToolTip toolTipHint;
+        private System.Windows.Forms.ToolTip toolTipNewWord;
     }
 }

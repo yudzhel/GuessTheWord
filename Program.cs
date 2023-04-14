@@ -9,6 +9,7 @@ namespace GuessTheWord
     internal static class Program
     {
         public static Home home;
+        public static Play play;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

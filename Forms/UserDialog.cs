@@ -29,8 +29,8 @@ namespace GuessTheWord.Forms
             {
                 PlayerName = textBoxPlayerName.Text.Trim().ToUpper();
                
-                playForm = new Play();
-                playForm.Show();
+                Program.play = new Play();
+                Program.play.Show();
                 this.Close();
                 Program.home.Hide();
             }

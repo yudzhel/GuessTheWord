@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Code\Word.cs" />
     <Compile Include="Code\WordController.cs" />
+    <Compile Include="Forms\GameOverDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GameOverDialog.Designer.cs">
+      <DependentUpon>GameOverDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\GameOverDialog.resx">
+      <DependentUpon>GameOverDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,9 +122,12 @@
     <None Include="Resources\title.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="File\leaderboard.txt" />
+    <Content Include="Resources\hourglass.png" />
     <Content Include="Resources\lightbulb.png" />
     <Content Include="Resources\puzzle.ico" />
     <Content Include="Resources\refresh-page-option.png" />
+    <Content Include="Resources\trophy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

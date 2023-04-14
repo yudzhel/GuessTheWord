@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -19,7 +20,7 @@ namespace GuessTheWord
         int timeLeft;
         static WordController wc = new WordController();
         static string wordName = "";
-        static int score = 0;
+        public static int score = 0;
         static string synonyms = "";
         static char firstLetter;
         static int hintCount = 3;
@@ -31,17 +32,19 @@ namespace GuessTheWord
         private void Play_Load(object sender, EventArgs e)
         {
             labelPlayerName.Text = UserDialog.PlayerName;
+            score = 0;
             labelScore.Text = Convert.ToString(score);
-            timeLeft = 20;
+            timeLeft = 10;
             labelTimer.Text = Convert.ToString(timeLeft);
             timer1.Start();
             GenerateWordToGuess();
         }
 
-        private void buttonBack_Click(object sender, EventArgs e)
+        private void buttonGiveUp_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Program.home.Show();
+            timer1.Stop();
+            GameOverDialog gameOverDialog = new GameOverDialog();
+            gameOverDialog.ShowDialog();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -54,9 +57,11 @@ namespace GuessTheWord
             else
             {
                 timer1.Stop();
-                string gameOverText = "You scored: " + score;
-                
-                MessageBox.Show(gameOverText, "Time's Up!");
+                string path = "D:\\git\\GuessTheWord\\File\\leaderboard.txt";
+                File.AppendAllText(path, UserDialog.PlayerName + ":" + score + Environment.NewLine);
+                GameOverDialog gameOverDialog = new GameOverDialog();
+                gameOverDialog.ShowDialog();
+               
             }
                
         }
@@ -79,7 +84,7 @@ namespace GuessTheWord
             }
 
             labelWordToGuess.Text = string.Join(" ", wordHidden);
-            labelSynonyms.Text = synonyms;
+            labelSynonyms.Text = "SYNONYMS: " + synonyms;
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
@@ -157,6 +162,16 @@ namespace GuessTheWord
                 pictureBoxShowHint.Enabled = false;
                 hintCount--;
             }
+        }
+
+        private void pictureBoxNewWord_MouseHover(object sender, EventArgs e)
+        {
+            toolTipNewWord.SetToolTip(pictureBoxNewWord, "New Word");
+        }
+
+        private void pictureBoxShowHint_MouseHover(object sender, EventArgs e)
+        {
+            toolTipHint.SetToolTip(pictureBoxShowHint, "Hint");
         }
     }
 }
