@@ -36,13 +36,25 @@ namespace GuessTheWord.Forms
                 foreach(var line in lines)
                 {
                     string[] lineSplit = line.Split(':');
-                    dictionary.Add(lineSplit[0], Convert.ToInt32(lineSplit[1]));
+                    int points = Convert.ToInt32(lineSplit[1]);
+                    string player = lineSplit[0];
+
+                    if (dictionary.ContainsKey(player) && points > dictionary[player])
+                    {
+                        dictionary[player] = points;
+                    } 
+                    else if (dictionary.ContainsKey(player) && points <= dictionary[player]) continue;
+                    else
+                    {
+                        dictionary.Add(player, points);
+                    }
+                    
                 }
 
                 foreach(var entry in dictionary.OrderByDescending(key => key.Value))
                 {
                     if (position > 15) break;
-                    str.Append($"{position}.    {entry.Key} - {entry.Value} \n");
+                    str.Append($"{position}.\t{entry.Key} - {entry.Value} \n");
                     position++;
                 }
 
@@ -52,7 +64,7 @@ namespace GuessTheWord.Forms
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                labelLeaderboard.Text = ex.Message;
             }
         }
 
