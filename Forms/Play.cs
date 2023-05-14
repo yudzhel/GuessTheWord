@@ -1,17 +1,10 @@
 ﻿using GuessTheWord.Code;
 using GuessTheWord.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GuessTheWord
 {
@@ -34,20 +27,20 @@ namespace GuessTheWord
             labelPlayerName.Text = UserDialog.PlayerName;
             score = 0;
             labelScore.Text = Convert.ToString(score);
-            timeLeft = 10;
+            timeLeft = 30;
             labelTimer.Text = Convert.ToString(timeLeft);
             timer1.Start();
             GenerateWordToGuess();
         }
 
-        private void buttonGiveUp_Click(object sender, EventArgs e)
+        private void ButtonGiveUp_Click(object sender, EventArgs e)
         {
             timer1.Stop();
             GameOverDialog gameOverDialog = new GameOverDialog();
             gameOverDialog.ShowDialog();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             if(timeLeft > 0)
             {
@@ -87,7 +80,7 @@ namespace GuessTheWord
             labelSynonyms.Text = "SYNONYMS: " + synonyms;
         }
 
-        private void buttonSubmit_Click(object sender, EventArgs e)
+        private void ButtonSubmit_Click(object sender, EventArgs e)
         {
             CheckAnswer();
         }
@@ -125,12 +118,12 @@ namespace GuessTheWord
             GenerateWordToGuess();
         }
 
-        private void textBoxAnswer_KeyDown(object sender, KeyEventArgs e)
+        private void TextBoxAnswer_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter) CheckAnswer();
         }
 
-        private void pictureBoxNewWord_Click(object sender, EventArgs e)
+        private void PictureBoxNewWord_Click(object sender, EventArgs e)
         {
             pictureBoxShowHint.Enabled = true;
             hintCount = 3;
@@ -138,7 +131,7 @@ namespace GuessTheWord
             GenerateWordToGuess();
         }
 
-        private void pictureBoxShowHint_Click(object sender, EventArgs e)
+        private void PictureBoxShowHint_Click(object sender, EventArgs e)
         {
             char[] wordHidden = new char[wordName.Length];
             for (int i = 0; i < wordHidden.Length; i++)
@@ -164,12 +157,12 @@ namespace GuessTheWord
             }
         }
 
-        private void pictureBoxNewWord_MouseHover(object sender, EventArgs e)
+        private void PictureBoxNewWord_MouseHover(object sender, EventArgs e)
         {
             toolTipNewWord.SetToolTip(pictureBoxNewWord, "New Word");
         }
 
-        private void pictureBoxShowHint_MouseHover(object sender, EventArgs e)
+        private void PictureBoxShowHint_MouseHover(object sender, EventArgs e)
         {
             toolTipHint.SetToolTip(pictureBoxShowHint, "Hint");
         }

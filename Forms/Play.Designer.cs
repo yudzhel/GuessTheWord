@@ -84,7 +84,7 @@
             this.buttonGiveUp.TabIndex = 1;
             this.buttonGiveUp.Text = "Give Up";
             this.buttonGiveUp.UseVisualStyleBackColor = false;
-            this.buttonGiveUp.Click += new System.EventHandler(this.buttonGiveUp_Click);
+            this.buttonGiveUp.Click += new System.EventHandler(this.ButtonGiveUp_Click);
             // 
             // panel1
             // 
@@ -219,8 +219,8 @@
             this.pictureBoxShowHint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxShowHint.TabIndex = 11;
             this.pictureBoxShowHint.TabStop = false;
-            this.pictureBoxShowHint.Click += new System.EventHandler(this.pictureBoxShowHint_Click);
-            this.pictureBoxShowHint.MouseHover += new System.EventHandler(this.pictureBoxShowHint_MouseHover);
+            this.pictureBoxShowHint.Click += new System.EventHandler(this.PictureBoxShowHint_Click);
+            this.pictureBoxShowHint.MouseHover += new System.EventHandler(this.PictureBoxShowHint_MouseHover);
             // 
             // pictureBoxNewWord
             // 
@@ -232,8 +232,8 @@
             this.pictureBoxNewWord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxNewWord.TabIndex = 10;
             this.pictureBoxNewWord.TabStop = false;
-            this.pictureBoxNewWord.Click += new System.EventHandler(this.pictureBoxNewWord_Click);
-            this.pictureBoxNewWord.MouseHover += new System.EventHandler(this.pictureBoxNewWord_MouseHover);
+            this.pictureBoxNewWord.Click += new System.EventHandler(this.PictureBoxNewWord_Click);
+            this.pictureBoxNewWord.MouseHover += new System.EventHandler(this.PictureBoxNewWord_MouseHover);
             // 
             // labelSynonyms
             // 
@@ -260,7 +260,7 @@
             this.buttonSubmit.TabIndex = 3;
             this.buttonSubmit.Text = "SUBMIT";
             this.buttonSubmit.UseVisualStyleBackColor = false;
-            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
+            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
             // 
             // textBoxAnswer
             // 
@@ -271,7 +271,7 @@
             this.textBoxAnswer.Size = new System.Drawing.Size(367, 38);
             this.textBoxAnswer.TabIndex = 1;
             this.textBoxAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxAnswer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxAnswer_KeyDown);
+            this.textBoxAnswer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxAnswer_KeyDown);
             // 
             // labelWordToGuess
             // 
@@ -287,7 +287,7 @@
             // timer1
             // 
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // Play
             // 

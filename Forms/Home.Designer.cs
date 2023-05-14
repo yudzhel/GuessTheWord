@@ -99,7 +99,7 @@
             this.buttonExit.TabIndex = 2;
             this.buttonExit.Text = "EXIT";
             this.buttonExit.UseVisualStyleBackColor = false;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            this.buttonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // buttonLeaderboard
             // 
@@ -118,7 +118,7 @@
             this.buttonLeaderboard.TabIndex = 1;
             this.buttonLeaderboard.Text = "LEADERBOARD";
             this.buttonLeaderboard.UseVisualStyleBackColor = false;
-            this.buttonLeaderboard.Click += new System.EventHandler(this.buttonLeaderboard_Click);
+            this.buttonLeaderboard.Click += new System.EventHandler(this.ButtonLeaderboard_Click);
             // 
             // button1
             // 
@@ -137,7 +137,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "NEW GAME";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // panel2
             // 

@@ -139,7 +139,7 @@
             this.MinimizeBox = false;
             this.Name = "GameOverDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GameOverDialog";
+            this.Text = "Game Over";
             this.Load += new System.EventHandler(this.GameOverDialog_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
